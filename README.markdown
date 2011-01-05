@@ -1,13 +1,13 @@
-# Enchanced Option Types
+# Enhanced Option Types
 
 Now supporting Spree 0.30.x !
 
 ## Description
 
-This extension enchances spree functionality when handling products with
+This extension enhances spree functionality when handling products with
 numerous and complex variants.
 
-Following enchancements are provided:
+Following enhancements are provided:
 
 * Admin side:
   * Selecting order of option types for prototype with drag & drop
@@ -26,13 +26,13 @@ Following enchancements are provided:
   * using 2d table of radio boxes (only when there are only 2 option types!)
 * Javascript helpers:
   * Instant updating of price based on variant selected using above methods
-  * Instand updating of number of on_hand units
+  * Instant updating of number of on_hand units
   * enabling/disabling options that don't have corresponding variant.
   * products.js override (edge spree only) for working with variant images
 
 Some of the functionality might not work without javascript, but much work was put
-to make JS as unintrusive as possible, so It should be fairly easy excercise
-to make it completelly JS independent.
+to make JS as unintrusive as possible, so it should be fairly easy exercise
+to make it completely JS independent.
 
 ## Credits
 
@@ -56,10 +56,10 @@ Second one shows selects - it's much more compact then previous example,
 
 Thrid shows the 2d table for variant choosing.
 
-## Instalation
+## Installation
 
 Add the following to your Gemfile:
-<code>gem 'spree_enhanced_option_types', :git => 'git://github.com/swistak/spree-enhanced-option-types.git'</code>
+<code>gem 'spree_enhanced_option_types', :git => 'https://github.com/swistak/spree-enhanced-option-types.git'</code>
 
 Run:
 <code>bundle install</code>
@@ -73,9 +73,9 @@ and finally:
 ## Customization
 
 User interface change is limited only to _cart_form partial from original spree.
-it was separated into several subfiles to make customization and embeding in custom layouts easier.
+it was separated into several subfiles to make customization and embedding in custom layouts easier.
 
-There are no inline styles (except for 2d table, that absolutelly requires
+There are no inline styles (except for 2d table, that absolutely requires
 some wire frame styles to look sane), you can either use provided _cart_form
 partial as a replacement for generic spree partial, or you can roll your own and
 only include one of variant choosing partials.
@@ -84,7 +84,7 @@ There are some special css classes you might be interested in:
 .price.update - price field that should be updated with new price value if variant changes.
 span.
 
-Source is extensivelly documented and I recomend reading it.
+Source is extensively documented and I recommend reading it.
 
 ## Limitations
 
@@ -92,7 +92,7 @@ Source is extensivelly documented and I recomend reading it.
 
 ## TODO
 
-- gracefull handling non-js users.
+- graceful handling non-js users.
 - test under other browsers then FF
 
 ## License
