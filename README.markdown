@@ -59,7 +59,7 @@ Thrid shows the 2d table for variant choosing.
 ## Instalation
 
 Add the following to your Gemfile:
-<code>gem 'spree_enhanced_option_types', :git => 'git://github.com/swistak/spree-enhanced-option-types.git'</code>
+<code>gem 'spree_enhanced_option_types', :git => 'git://github.com/pero-ict/spree-enhanced-option-types.git'</code>
 
 Run:
 <code>bundle install</code>
