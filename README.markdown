@@ -65,7 +65,7 @@ Run:
 <code>bundle install</code>
 
 and:
-<code>rake spree_enhance_option_types:install</code>
+<code>rake spree_enhanced_option_types:install</code>
 
 and finally:
 <code>rake db:migrate</code>
