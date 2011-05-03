@@ -1,7 +1,12 @@
 Admin::PrototypesController.class_eval do
   skip_after_filter :set_habtm_associations
+ 
+  update.after :reorder_option_types
+  create.after :reorder_option_types
 
-  reorder_option_types = lambda do
+  protected
+
+  def reorder_option_types
     set_habtm_associations
     @prototype.option_types_prototypes.each do |otp|
       new_position = params[:option_type][:id].index(otp.option_type_id.to_s)
@@ -15,7 +20,4 @@ Admin::PrototypesController.class_eval do
         })
     end
   end
-  
-  update.after(&reorder_option_types)
-  create.after(&reorder_option_types)
 end
