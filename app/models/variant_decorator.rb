@@ -21,10 +21,13 @@ Variant.class_eval do
       ]).map(&:reload)
   end
 
-  def calculate_price(master_price=nil)
-    price = (master_price || product.master.price).to_f
-    price+= self.option_values.map{|ov| ov.amount.to_f}.sum
-    price > 0 ? price : 0
+  def calculate_price(master_price = nil)
+    begin
+      price = (master_price || product.master.price).to_f
+      price+= self.option_values.map{|ov| ov.amount.to_f}.sum
+      price > 0 ? price : 0
+    rescue
+    end
   end
 
   # Ensures a new variant takes the product master price when price is not supplied
