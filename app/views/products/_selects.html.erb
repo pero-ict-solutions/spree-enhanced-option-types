@@ -3,7 +3,7 @@
 <% default_values = @product.default_variant.option_values.group_by{|ov| ov.option_type_id} if @product.default_variant %>
 <% selected_values = [] %>
 <% @product.option_types.uniq.each do |option_type|
-  default_value = default_values[option_type.id].first;
+  default_value = default_values[option_type.id].try(:first);
   options = option_type.option_values.map do |ov|
     [ov.presentation, ov.id, ov == default_value, !possible_combination?(ov_combinations, selected_values+[ov.id])]
   end.compact
