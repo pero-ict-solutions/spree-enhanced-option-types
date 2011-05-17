@@ -4,8 +4,12 @@ OptionValue.class_eval do
   after_update :adjust_variant_prices, :if => :amount_changed?
 
   def adjust_variant_prices
-    #first delete orphans.. not sure why they even exists..
-    variants.each {|v| v.destroy unless v.product}
-    variants.each {|v| v.update_attribute(:price, v.calculate_price)}
+    variants.each do |v|
+      if v.product
+        v.update_attribute(:price, v.calculate_price)
+      else
+        v.destroy
+      end
+    end
   end
 end
