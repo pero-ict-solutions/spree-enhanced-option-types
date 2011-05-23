@@ -1,24 +1,4 @@
 function update_variant_images(vid, text) {
-  jQuery("#variant-thumbnails").empty();
-  if (text) jQuery("#variant-images span").html(text);
-
-  if (images && images[vid] && images[vid].length > 0) {
-    $.each(images[vid], function(i, link) {
-      jQuery("#variant-thumbnails").append('<li>' + link + '</li>');
-    });
-
-    jQuery("#variant-images").show();
-  } else {
-    jQuery("#variant-images").hide();
-  }
-
-  add_image_handlers();
-
-  var link = jQuery("#variant-thumbnails a")[0];
-
-  jQuery("#main-image img").attr({src: jQuery(link).attr('href')});
-  jQuery('ul.thumbnails li').removeClass('selected');
-  jQuery(link).parent('li').addClass('selected');
 }
 
 
@@ -89,6 +69,7 @@ $("#product-variants input[type=radio].option-value").bind("change", function(){
 });
 
 $('#product-variants select.option-type').bind("change", function(){
+	
   var selected_values = [];
   // for each option group (represented by select)
   $("#product-variants select.option-type").map(function(i, select){
@@ -102,7 +83,7 @@ $('#product-variants select.option-type').bind("change", function(){
         $(option).attr('selected', false);
     })
 
-    // find radio that is checked, or can be checked
+    // find select that is checked, or can be checked
     var selected_option = $(select).find("option:selected");
     if (!selected_option[0])
       selected_option = $(select).find("option:selected").attr('selected', true)

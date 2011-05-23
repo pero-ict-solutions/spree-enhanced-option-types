@@ -11,7 +11,6 @@
   <div class="option-type-wrapper" id="option-type_<%=option_type.name%>">
     <span class="option-type"><%= option_type.presentation %></span>
     <%
-
       select_options = options.map{|o|
         selected_attribute = " selected='selected'" if o[2]
         disabled_attribute = " disabled='disabled'" if o[3]
@@ -22,5 +21,4 @@
   </div>
   <% selected_values << default_value.id;
 end %>
-
-<%= render :partial => 'eot_includes', :locals => {:ov_combinations => ov_combinations} %>
+<%= render :partial => 'eot_includes', :locals => {:ov_combinations => ov_combinations, :default_id => selected_values[0]} %>
